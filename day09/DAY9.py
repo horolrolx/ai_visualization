@@ -14,8 +14,7 @@ except:
     print('fail')
     # break
 
-
-# 영상이 안 읽힌 경우 메시지
+# 영상이 안 열리는 경우 에러 메시지
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 if not cap.isOpened():
     print("Video is unavailable :", filepath)
@@ -23,16 +22,27 @@ if not cap.isOpened():
 
 # 전체 프레임 갯수 저장
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
-length
 
+# 초당 프레임 갯수 저장
+fps = int(cap.get(cv2.CAP_PROP_FPS))
+
+# 파일을 저장한 번호 저장
+count = 0
+
+# 초당 1프레임 저장
 while True:
     ret, frame = cap.read()
-    # cv2.imread('BigBuckBunny_320x180.mp4' + '/frame{}.jpg'.format(cap.get(1)), frame)
-    print('Saved frame : {}.jpg'.format(cap.get(1)))
+    if int(cap.get(1)) % int(fps) == 0:
+        cv2.imwrite('BigBuckBunny_320x180.mp4' + '/frame{}.jpg'.format(cap.get(1)), frame)
 
+    print('Saved frame : {}.jpg'.format(cap.get(1)))
+    count += 1
+
+    # 마지막 프레임에 도달하면 종료
     if cap.get(1) == length:
         break
 
+    # ESC 키를 누르면 종료
     key = cv2.waitKey(33)
     if key == 27: # ESC
         break 
