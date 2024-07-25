@@ -33,8 +33,9 @@ while True:
     # 캐스케이드 분류기로 객체좌표를 가져와서 박스표시
     cars = car_casecade.detectMultiScale(roi)
     for (x, y, w, h) in cars:
-        cv2.rectangle(roi, (x, y), (x+w, y+h), (0, 0, 255), 2)
+        # cv2.rectangle(roi, (x, y), (x+w, y+h), (0, 0, 255), 2)
         cv2.rectangle(roi, (x, y, w, h), (0, 0, 255), 2)
+        print(x, y)
 
     # 시각화
     cv2.imshow('frame', frame)
