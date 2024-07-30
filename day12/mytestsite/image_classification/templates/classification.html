@@ -8,27 +8,40 @@
     <meta name="description" content="이미지를 분류하는 어플리케이션">
     <meta name="keywords" content="Keras, Huggingface">
     <style>
+        body {
+            text-align: center;
+            background-image: url("https://mblogthumb-phinf.pstatic.net/MjAyMjAyMDdfMjEy/MDAxNjQ0MTk0Mzk2MzY3.WAeeVCu2V3vqEz_98aWMOjK2RUKI_yHYbuZxrokf-0Ug.sV3LNWlROCJTkeS14PMu2UBl5zTkwK70aKX8B1w2oKQg.JPEG.41minit/1643900851960.jpg?type=w800");
+            color: aquamarine
+        }
         table,
         th,
         td {
             border: 1px solid black;
             border-collapse: collapse;
         }
+
+        .image_bg {
+            background-color: whitesmoke;
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #result {
+            background-color: aqua;
+            width: 50%;
+        }
     </style>
 </head>
 
 <body>
     <h1>MNIST 이미지 분류</h1>
-
     <p>이미지를 올려 주세요</p>
     <form action="result.html" method="post">
-        <input type="text" value="Drag and drop file here">
-        <input type="submit" value="Browser files">
+        <input type="file" value="Choose File">
     </form>
     <p>seven.jpg</p>
     <img src="seven.jpg" alt="number seven" width="400" height="400">
-    <p style="background-color: aqua; width:50%">업로드한 손글씨는 7 입니다.</p>
-
+    <p style="background-color: red; width:50%">업로드한 손글씨는 7 입니다.</p>
 </body>
-
 </html>
