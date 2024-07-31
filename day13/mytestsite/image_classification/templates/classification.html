@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- 여기는 웹페이지에 대한 정보 -->
+    <title>이미지 분류</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="이미지를 분류하는 어플리케이션">
+    <meta name="keywords" content="Keras, Huggingface">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            text-align: center;
+            color: aquamarine
+        }
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .image_br {
+            background-color: whitesmoke;
+            width: 20%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+        }
+
+        #result {
+            background-color: yellowgreen;
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .dp_bg {
+            background-color: red;
+        }
+
+        .container-fluid {
+            padding: 50px;
+        }
+    </style>
+    <link rel="stylesheet" href=“https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css ref="">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <h1>MNIST 이미지 분류</h1>
+
+    <div class="img_bg container-fluid">
+        <p>이미지를 올려 주세요</p>
+        <button action="result.html" method="post">
+            <input type="file" value="Browser files">
+            <button type="button" class="btn btn-default btn-lg">이미지 제출</button>
+        </form>
+    </div>
+    <div class="dp_bg container-fluid">
+        <p>seven.jpg</p>
+        <img src="seven.jpg" alt="number seven" width="400" height="400">
+        <p id="result">업로드한 손글씨는 7 입니다.</p>
+    </div>
+</body>
+
+</html>
