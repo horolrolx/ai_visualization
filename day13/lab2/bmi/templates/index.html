@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>BMI</title>
+        <script>
+            $.ajaxSetup({
+              headers: { "X-CSRFToken": '{{csrf_token}}' }
+            });
+          </script>
+    </head>
+    <body>
+        <h1>BMI Calculation</h1>
+        <form action="result" method="post">
+            <p>
+                Enter your name: <input type="text" name="name" /><br />
+                Enter your height: <input type="text" name="height" /><br />
+                Enter your weight: <input type="text" name="weight" /><br />
+                <input type="submit" value="Calculate BMI!" />
+            </p>
+        </form>
+    </body>
+</html>

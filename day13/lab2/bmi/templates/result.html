@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>BMI Calculation</title>
+        <script>
+            $.ajaxSetup({
+              headers: { "X-CSRFToken": '{{csrf_token}}' }
+            });
+          </script>
+    </head>
+    <body>
+        <h1>BMI</h1>
+        <p>Summary of your BMI</p>
+        <ul>
+            <li>Name:<strong>{{name}}</strong></li>
+            <li>Height:<strong>{{height}}</strong></li>
+            <li>Weight:<strong>{{weight}}</strong></li>
+            <li>BMI:<strong>{{bmi}}</strong></li>
+        </ul>
+    </body>
+</html>
